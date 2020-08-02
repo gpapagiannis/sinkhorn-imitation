@@ -17,7 +17,7 @@ from RL.common import estimate_advantages
 from RL.agent import Agent
 
 
-parser = argparse.ArgumentParser(description='PyTorch TRPO example')
+parser = argparse.ArgumentParser(description='Trust Region Policy Optimization')
 parser.add_argument('--env-name', default="Ant-v2", metavar='G',
                     help='name of the environment to run')
 parser.add_argument('--model-path', metavar='G',
@@ -27,27 +27,27 @@ parser.add_argument('--render', action='store_true', default=False,
 parser.add_argument('--log-std', type=float, default=-0.0, metavar='G',
                     help='log std for the policy (default: -0.0)')
 parser.add_argument('--gamma', type=float, default=0.995, metavar='G',
-                    help='discount factor (default: 0.99)')
+                    help='discount factor')
 parser.add_argument('--tau', type=float, default=0.97, metavar='G',
-                    help='gae (default: 0.95)')
+                    help='gae (default: 0.97)')
 parser.add_argument('--l2-reg', type=float, default=1e-3, metavar='G',
                     help='l2 regularization regression (default: 1e-3)')
 parser.add_argument('--max-kl', type=float, default=0.1, metavar='G',
-                    help='max kl value (default: 1e-2)')
+                    help='max kl value (default: 0.1)')
 parser.add_argument('--damping', type=float, default=1e-1, metavar='G',
-                    help='damping (default: 1e-2)')
+                    help='damping (default: 1e-1)')
 parser.add_argument('--num-threads', type=int, default=4, metavar='N',
                     help='number of threads for agent (default: 4)')
 parser.add_argument('--seed', type=int, default=1, metavar='N',
                     help='random seed (default: 1)')
 parser.add_argument('--min-batch-size', type=int, default=50000, metavar='N',
-                    help='minimal batch size per TRPO update (default: 2048)')
-parser.add_argument('--max-iter-num', type=int, default=1500, metavar='N',
+                    help='minimal batch size per TRPO update (default: 50000)')
+parser.add_argument('--max-iter-num', type=int, default=500, metavar='N',
                     help='maximal number of main iterations (default: 500)')
 parser.add_argument('--log-interval', type=int, default=1, metavar='N',
-                    help='interval between training status logs (default: 10)')
+                    help='interval between training status logs (default: 1)')
 parser.add_argument('--save-model-interval', type=int, default=10, metavar='N',
-                    help="interval between saving model (default: 0, means don't save)")
+                    help='interval between saving model (default: 0, means don\'t save)')
 parser.add_argument('--gpu-index', type=int, default=0, metavar='N')
 args = parser.parse_args()
 
