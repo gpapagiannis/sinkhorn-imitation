@@ -4,8 +4,8 @@ Code for the experiments in the work: Imitation Learning with Sinkhorn Distances
 
 ## Prerequisites 
 * A version of python 3
-* In order to run the experiments you will need to install the MuJoco simulator (https://github.com/openai/mujoco-py) and OpenAIGym (https://gym.openai.com/docs/)
-* Project specific requirements can be installed directly via:
+* To run the experiments, first install the MuJoco simulator (https://github.com/openai/mujoco-py) and OpenAIGym (https://gym.openai.com/docs/).
+* Other project specific requirements can be installed directly via:
 ```
 pip install -r requirements.txt
 ```
@@ -15,8 +15,7 @@ pip install -r requirements.txt
 
 
 ## Steps to perform imitation learning (Example)
-In this example the steps to perform imitation learning using SIL for the Ant-v2 environment with 16 expert  trajectories is shown. The same exact process can be repeated for any environment
-to perform imitation and any algorithm between AIRL, GAIL and SIL (including the ablation study)
+This example shows the steps to perform imitation learning using SIL for the Ant-v2 environment with 16 expert trajectories. The same process can be repeated for other experiments (Hopper-v2, Walker2d-v2, HalfCheetah-v2 and Humanoid-v2) and algorithms (GAIL and AIRL)
 
 
 ### Step 1: Train RL agent to obtain expert performance
@@ -42,9 +41,8 @@ Testing the policy will return performance in terms of the reward metric and the
 python imitation-learning/test_policy.py --env-name Ant-v2 --model-path assets/learned_models/SIL/16/Ant-v2_SIL_s123.p --expert-traj-path assets/subsampled_expert_traj/16/Ant-v2 --dataset-size 16 --episodes 50 --method sil
 ```
 
-* A large amount of the Reinforcement Learning code and folder structure was based on the implementation of Ye Yuan [Khrylx/PyTorch-RL](https://github.com/Khrylx/PyTorch-RL/blob/master/README.md) 
-
 ### References
+* A large amount of the Reinforcement Learning code and folder structure was based on the implementation of Ye Yuan [Khrylx/PyTorch-RL](https://github.com/Khrylx/PyTorch-RL/blob/master/README.md) 
 * [Generative Adversarial Imitation Learning (GAIL)](https://papers.nips.cc/paper/6391-generative-adversarial-imitation-learning)
 * [Adversarial Inverse Reinforcement Learning (AIRL)](https://openreview.net/pdf?id=rkHywl-A-)
 * [Inverse RL by Justin Fu Implementation](https://github.com/justinjfu/inverse_rl)

@@ -18,7 +18,7 @@ parser.add_argument('--env-name',               default="Ant-v2", metavar='G', h
 parser.add_argument('--model-path',             metavar='G', help='name of the expert model')
 parser.add_argument('--render',                 action='store_true', default=False, help='Render MuJoCo')
 parser.add_argument('--seed',                   type=int, default=1, metavar='N',help='Random Seed')
-parser.add_argument('--max-expert-state-num',   type=int, default=6000, metavar='N',help='maximal number of main iterations (default: 50000)')
+parser.add_argument('--max-expert-state-num',   type=int, default=6000, metavar='N',help=' ')
 parser.add_argument('--episodes',               type=int, default=50, metavar='N', help='Episodes to test on (default: 50 as in paper)')
 parser.add_argument('--dataset-size',           type=int, default=4, metavar='N', help='Number of expert demonstrations provided')
 parser.add_argument('--expert-traj-path',       metavar='G', help='name of the expert model')
