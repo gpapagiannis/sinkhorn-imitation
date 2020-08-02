@@ -31,7 +31,7 @@ python imitation-learning/generate_expert_traj.py --env-name Ant-v2 --model-path
 python imitation-learning/subsample_trajectory.py --env-name  Ant-v2 --traj-path assets/expert_traj/Ant-v2_expert_traj.p --number-of-traj 16
 ```
 ### Step 4: Train Sinkhorn Imitation Learning
-The results are saved with the seed number in the end in order to be able to keep track performance amongst difference seeds
+The results are saved with the seed number in the end in order to be able to keep track performance amongst difference seeds. To change the critic network's output edit the file: ```./models/ot_critic.py```.
 ```
 python imitation-learning/SIL.py --env-name Ant-v2 --expert-traj-path assets/subsampled_expert_traj/16/Ant-v2 --gamma 0.99 --tau 0.97 --min-batch-size 50000 --seed 123 --max-iter-num 250 --log-actual-sinkhorn True --critic-lr .0005 --dataset-size 16
 ```

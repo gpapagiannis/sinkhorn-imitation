@@ -18,7 +18,7 @@ class OTCritic(nn.Module):
             self.affine_layers.append(nn.Linear(last_dim, nh))
             last_dim = nh
         
-        self.logic = nn.Linear(last_dim, 10)
+        self.logic = nn.Linear(last_dim, 30)
 
     def forward(self, x):
         for affine in self.affine_layers:
